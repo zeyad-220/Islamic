@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيل الإيمان</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+               emailjs.init({
+                 publicKey: "bVz_AOZpAbCR2gADo",
+               });
+            })();
+        </script>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        header h1 a:hover {
+            color: #1abc9c;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+            transform: translateY(-3px);
+        }
+
+        main {
+            padding: 20px;
+            min-height: 80vh;
+        }
+
+        footer {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            padding: 1px ;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1abc9c;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .image-description {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #ecf0f1;
+        }
+
+        .video-container {
+            max-width: 80%;
+            margin: 20px auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .prayer-times {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ecf0f1;
+        }
+
+        .contact-form button {
+            background: #1abc9c;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #16a085;
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            animation: moveBackground 10s infinite alternate;
+        }
+
+        @keyframes moveBackground {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-background"></div>
+    <header>
+        <h1><a href="#" onclick="showSection('home')">سيل الإيمان</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('prayer-times')"> الصلاة</a></li>
+                <li><a href="#" onclick="showSection('quran')">القرآن</a></li>
+                <li><a href="#" onclick="showSection('morning')"> الصباح</a></li>
+                <li><a href="#" onclick="showSection('evening')"> المساء</a></li>
+                <li><a href="#" onclick="showSection('nasi7a')">نصائح</a></li>
+                <li><a href="#" onclick="showSection('contact')">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="home" class="content active">
+            <h2 class="section-title">مرحبًا بكم في سيل الإيمان</h2>
+            <p>السلام عليكم ورحمة الله وبركاته,اهلا بكم في موقعنا حيث نتشارك الأجر بالتقرب من الله</p>
+        </section>
+
+        <section id="morning" class="content">
+            <h2 class="section-title">أذكار الصباح</h2>
+            <div class="image-container">
+                <img src="Images/morning.jpg" alt="أذكار الصباح">
+                <p class="image-description">ابدأ يومك بالأذكار الصباحية.</p>
+                <p>عن أم سلمة رضي الله عنها قالت: ما خرج النبي صلى الله عليه وسلم من بيتي قط إلا رفع طرفه إلى السماء فقال: اللهم إني أعوذ بك أن أضِل أو أُضَل، أو أزِل أو أُزَل، أو أظِلم أو أُظَلم، أو أجهل أو يجهل علي.</p>
+                <p>عن أنس بن مالك أن النبي صلى الله عليه وسلم قال: إذا خرج الرجل من بيته فقال: بسم الله توكلت على الله ولا حول ولا قوة إلا بالله قال: يقال حينئذ: هديت وكفيت ووقيت فتتنحى له الشياطين، فيقول له شيطان آخر: كيف لك برجل قد هدي وكفي ووقي</p>
+                </div>
+        </section>
+
+
+
+        <section id="evening" class="content">
+            <h2 class="section-title">أذكار المساء</h2>
+            <div class="image-container">
+                <img src="Images/evening.jpg" alt="أذكار المساء">
+                <p class="image-description">اختم يومك بالأذكار المسائية.</p> 
+                <p>ومتنساش سورة الملك واخر ايتين من سورة البقرة</p>
+            </div>
+            <div class="image-container">
+                <img src="Images/evening 2.jpg">
+                <p class="image-description">من قرأ آخر آيتين من سورة البقرة في ليلة كَفتاه.
+                    قيل: كَفتاه شر تلك الليلة
+                    وقيل: كَفتاه قِيامها.</p> 
+            </div>
+
+              <div class="image-container">
+                 <img src="Images/evening 3.jpg">
+                 <p class="image-description">عن أبي هريرة عن النبي صلى الله عليه وسلم قال: إن سورة من القرآن ثلاثون آية شفعت لرجل حتى غفر له، وهي سورة تبارك الذي بيده الملك.</p>
+           </div>
+           <p>ـ اشرب مياه كتير، سمي واشرب علي 3 مرات، لصحتك معظمنا مش بيشرب كويس وتاخد ثواب السنة</p>
+           <p>ـ انفض سريرك 3 مرات وانت جاي تنام وقول باسمك ربي وضعت جنبي وبك أرفعه، إن أمسكت نفسي فارحمها، وإن أرسلتها فاحفظها بما تحفظ به عبادك الصالحين، اللهم قني عذابك يوم تبعث عبادك ثلاث مرات، وأعوذ بكلمات الله التامات من شر ما خلق ثلاث مرات</p>
+           <p>ـ قال رسول الله صلِّ الله عليه وسلم (من قال حين يأوي إلى فراشِه : ( لا إله إلا اللهُ وحده لا شريك له ، له الملكُ ، وله الحمدُ ، وهو على كلِّ شيءٍ قديرٌ ، لاحولَ ولا قوةَ إلا بالله العليِّ العظيمِ ، سبحان اللهِ، والحمدُ لله ، ولا إله إلا اللهُ ، واللهُ أكبرُ ) ؛ غُفِرَتْ له ذنوبُه ولو كانت مثلَ زَبَدِ البحرِ)
+        </p>
+         </section>
+
+
+
+        <section id="quran" class="content">
+            <h2 class="section-title">القرآن الكريم</h2>
+            <p>حافظوا علي الورد اليومي من قراءة القران ولو صفحة</p>
+            <p>عنْ أبي هريرة -رضي الله عنه: أنَّ رسول الله -صلى الله عليه وسلم- قال: يَجيءُ القرآنُ يومَ القيامةِ فيَقولُ: يا ربِّ حلِّهِ، فَيلبسُ تاجَ الكَرامةِ، ثمَّ يقولُ: يا رَبِّ زِدهُ، فيلبسُ حلَّةَ الكرامةِ، ثمَّ يقولُ: يا ربِّ ارضَ عنهُ، فيقالُ لَهُ: اقرأْ وارْقَ، وتزادُ بِكُلِّ آيةٍ حسنةً.</p>
+            <p> في صحيح مسلم أن النبي -صلى الله عليه وسلم- قال: اقرؤوا القرآن فإنه يأتي يوم القيامة شفيعا لأصحابه، اقرؤوا البقرة وآل عمران، فإنهما يأتيان يوم القيامة كأنهما غمامتان، أو غيايتان، أو فرقان من طير صواف، تُحاجَّان عن صاحبهما يوم القيامة.</p>
+            <div class="image-container">
+                <img src="Images/quran.png"><hr>
+               <p class="image-description"> <a href="https://quran.com/ar" target="_blank">القرآن الكريم كامل قراءة واستماع اونلاين</a></p>
+               <hr>
+               <a href="https://play.google.com/store/apps/details?id=com.quran.labs.androidquran&hl=ar"> للتحميل اندرويد</a>
+               <hr>
+               <a href="https://apps.apple.com/us/app/quran-by-quran-com-%D9%82%D8%B1%D8%A2%D9%86/id1118663303"> للتحميل ايفون</a>
+               <hr>
+               <a href="https://quransoft.net/ar"> للتحميل للكمبيوتر</a>
+            </div>
+        </section>
+
+
+
+        <section id="nasi7a" class="content">
+            <h2 class="section-title">نصائح يومية</h2>
+            <ul>* Your Daily Reminder *</ul>
+           <ul> * حاول باللي تقدر عليه فيومك *
+            <hr>
+          <li>1- الورد اليومي من القرآن الكريم </li>  
+          <hr>
+            <li>2ـ قيام الليل والدعاء وتحسين علاقتك مع ربنا </li>
+            <hr>
+          <li> 3- الأذكار وسورة الملك واخر ايتين من سورة البقرة</li> 
+          <hr>
+          <li>4ـ اشرب مياه كتير، سمي واشرب علي 3 مرات، لصحتك معظمنا مش بيشرب كويس وتاخد ثواب السنة</li>  
+          <hr>
+           <li>5ـ انفض سريرك 3 مرات وانت جاي تنام وقول باسمك ربي وضعت جنبي وبك أرفعه، إن أمسكت نفسي فارحمها، وإن أرسلتها فاحفظها بما تحفظ به عبادك الصالحين، اللهم قني عذابك يوم تبعث عبادك ثلاث مرات، وأعوذ بكلمات الله التامات من شر ما خلق ثلاث مرات</li> 
+           <hr>
+           <li>6ـ قال رسول الله صلِّ الله عليه وسلم (من قال حين يأوي إلى فراشِه : ( لا إله إلا اللهُ وحده لا شريك له ، له الملكُ ، وله الحمدُ ، وهو على كلِّ شيءٍ قديرٌ ، لاحولَ ولا قوةَ إلا بالله العليِّ العظيمِ ، سبحان اللهِ، والحمدُ لله ، ولا إله إلا اللهُ ، واللهُ أكبرُ ) ؛ غُفِرَتْ له ذنوبُه ولو كانت مثلَ زَبَدِ البحرِ)
+                    </li> 
+              </ul>  
+            <hr>
+              <p> قيام الليل كنز متضيعوش من ايدك كل يوم فرصة تقربك لربنا اكتر بعيد عن باقي ضغوطات اليوم ولو بركعة انت اولي بكل فرصة تقربك لربنا اكتر واكتر وكلنا بنسعي وبنحاول نكون افضل وكلنا بندعيربنا وبنتمني حاجات منه مهما اختلف بس كلنا عندنا اللي بنحلم بيه ,استغل القرصة دي وادعي ربنا باللي بتتمناه فهدوء وسكينة الليل ويا سلام لو كانت فالثلث الاخير من الليل قبل الفجر, من حديث أبي هريرة رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: ينزل ربنا تبارك وتعالى كل ليلة إلى السماء الدنيا حين يبقى ثلث الليل الأخير، فيقول: من يدعوني فأستجيب له من يسألني فأعطيه من يستغفرني فأغفر له.</p>
+              <p> حاول دايما تخلي دا روتين وجزء من يومك وحاول تخلي في وقت برضه لدرس او بودكاست ديني يفيدك فطريقك فمواصلات او وقت فراغ كل البودكاستس اللي هذكرها موجودة برضه علي سبوتياي وكاست بوكس ومعظم برامج البودكاست </p>
+              <p>ادعولي باللي بتمناه ولكم بالمثل ان شاء الله ,عن أبي الدرداء رضي الله عنه قال: قال رسول اللهِ صلى الله عليه وسلم: (مَا مِنْ عَبْدٍ مُسْلِمٍ يَدْعُو لأَخِيهِ بِظَهْرِ الْغَيْبِ، إِلاَّ قَالَ الْمَلَكُ: وَلَكَ بِمِثْلٍ) رواه مسلم </p>
+              <p>تقبل الله منا ومنكم صالح الاعمال</p>
+              <hr>
+        
+            <div class="image-container">
+                <img src="Images/waee.jpg"><hr>
+                <a href="https://www.youtube.com/playlist?list=PLCpK4282MCT-lBXi4Nodjzq1TDZsK9qwr">بودكاست وعي لأحمد عامر وحازم الصديق</a>
+                </div>
+                <div class="image-container">
+                    <img src="Images/amer.png"><hr>
+                    <a href="https://www.youtube.com/playlist?list=PLSSxr3Rf2_X2oKwiy4UhzIdj4ACzB6dee">دروس السيرة النبوية لأحمد عامر</a>
+                    </div>
+                    <div class="image-container">
+                        <img src="Images/oyhman.jpg"><hr>
+                        <a href="https://www.youtube.com/@othmanalkamees/featured">حلقات الشيخ عثمان الخميس للفتاوي وعلوم الدين</a>
+                        </div>
+            </section>
+
+
+
+
+        <section id="prayer-times" class="content">
+            <h2 class="section-title">مواقيت الصلاة</h2>
+            <p>يقول الله تعالى: {إِنَّ الصَّلاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَوْقُوتًا} [النساء:١٠٣] </p>
+            <p>   {حافِظُوا عَلَى الصَّلَوَاتِ وَالصَّلَاةِ الْوُسْطَىٰ وَقُومُوا لِلَّهِ قَانِتِينَ} (البقرة :238)</p>
+            <div class="prayer-times" id="prayer-times-content">
+                <p>جاري تحميل مواقيت الصلاة...</p>
+            </div>
+            <p>يريت نختم الصلاة كمان بعد ما نصلي ونصلي السنن الرواتب لكل فرض</p>
+            <div class="image-container">
+                <img src="Images/prayer.jpg">
+                <p class="image-description"> من حديث أبي أمامة الباهلي رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: من قرأ آية الكرسي دبر كل صلاة لم يمنعه من دخول الجنة إلا أن يموت.</p>
+            </div>
+            <div class="image-container">
+                <img src="Images/sunah.jpg"><hr>
+                <p class="image-description">عن أبي هريرة عن النبي صلى الله عليه وسلم قال: إن أول ما يحاسب الناس به يوم القيامة من أعمالهم الصلاة، قال: يقول ربنا عز وجل لملائكته، وهو أعلم: انظروا في صلاة عبدي أتمها أم نقصها، فإن كانت تامة، كتبت له تامة، وإن كان انتقص منها شيئًا، قال: انظروا، هل لعبدي من تطوع؟ فإن كان له تطوع، قال: أتموا لعبدي فريضته من تطوعه، ثم تؤخذ الأعمال على ذاكم.</p>
+                </div>
+            </section>
+
+
+
+        <section id="contact" class="content">
+        <h2>تواصل معي لأي اقتراحات او تحسينات</h2>
+        <div class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" onclick="sendMessage()">Send Message</button>
+            <div id="response-message"></div>
+        </div>
+    </section>
+
+    </main>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 موقع سيل الإيمان. جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+
+            if (sectionId === 'prayer-times') {
+                fetchPrayerTimes();
+            }
+        }
+
+        function fetchPrayerTimes() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const { latitude, longitude } = position.coords;
+                    fetch(`https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=5`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const timings = data.data.timings;
+                            const prayerTimesContent = document.getElementById('prayer-times-content');
+                            prayerTimesContent.innerHTML = `
+                                <p>الفجر: ${timings.Fajr}</p>
+                                <p>الشروق: ${timings.Sunrise}</p>
+                                <p>الظهر: ${timings.Dhuhr}</p>
+                                <p>العصر: ${timings.Asr}</p>
+                                <p>المغرب: ${timings.Maghrib}</p>
+                                <p>العشاء: ${timings.Isha}</p>
+                            `;
+                        });
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+        </script>
+        <script>
+            emailjs.init("bVz_AOZpAbCR2gADo");
+    
+    function sendMessage() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var responseMessage = document.getElementById("response-message");
+    
+        // Check if fields are filled
+        if (!name || !email || !message) {
+            responseMessage.style.display = "block";
+            responseMessage.innerText = "Please fill in all fields.";
+            responseMessage.style.backgroundColor = "orange";
+            return;
+        }
+    
+        // Send email via EmailJS
+        emailjs.send("service_ug6050e", "template_bge8w3g", {
+            name: name,
+            email: email,
+            message: message
+        }).then(function(response) {
+            responseMessage.style.display = "block";
+            responseMessage.innerText = "Message sent successfully!";
+            responseMessage.style.backgroundColor = "green";
+        }, function(error) {
+            responseMessage.style.display = "block";
+            responseMessage.innerText = "Failed to send message. Check console for details.";
+            responseMessage.style.backgroundColor = "red";
+            console.error("EmailJS Error:", error);
+        });
+    }
+    
+        </script>
+</body>
+</html>
