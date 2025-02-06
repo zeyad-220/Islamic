@@ -731,9 +731,9 @@
         function scheduleNotifications() {
             const now = new Date();
             const morningTime = new Date(now);
-            morningTime.setHours(2, 16, 0); // 6 صباحًا
+            morningTime.setHours(2, 19, 0); // 6 صباحًا
             const eveningTime = new Date(now);
-            eveningTime.setHours(18, 0, 0); // 6 مساءً
+            eveningTime.setHours(20, 0, 0); // 6 مساءً
 
             if (now < morningTime) {
                 setTimeout(() => {
